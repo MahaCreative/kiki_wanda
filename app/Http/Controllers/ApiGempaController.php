@@ -144,7 +144,7 @@ Waspada terjadi gempa susulan.
             CURLOPT_POSTFIELDS => $data,
 
             CURLOPT_HTTPHEADER => array(
-                'Authorization: AiND+5eFUBHjS53uWzB5' //change TOKEN to your actual token
+                'Authorization: oAMf+vjnQeV9gmqAGRb8' //change TOKEN to your actual token
             ),
         ));
 
