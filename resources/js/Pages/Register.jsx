@@ -26,7 +26,6 @@ function LocationMarker({ data, setData }) {
             let foundProvince = null;
             let foundKab = null;
             for (let feature of dataJson.features) {
-                // Pastikan feature.geometry adalah objek yang valid
                 if (feature.geometry) {
                     let isInPolygon = false;
 
@@ -49,8 +48,8 @@ function LocationMarker({ data, setData }) {
                     }
 
                     if (isInPolygon) {
-                        foundProvince = feature.properties.NAME_1; // Sesuaikan dengan nama properti provinsi Anda
-                        foundKab = feature.properties.NAME_2; // Sesuaikan dengan nama properti kabupaten Anda
+                        foundProvince = feature.properties.NAME_1;
+                        foundKab = feature.properties.NAME_2;
                         break;
                     }
                 }
@@ -71,6 +70,7 @@ function LocationMarker({ data, setData }) {
         </Marker>
     );
 }
+
 export default function Register({ setModalRegister, setModalLogin }) {
     const { data, setData, post, reset, errors } = useForm({
         firstname: "",
@@ -244,7 +244,7 @@ export default function Register({ setModalRegister, setModalLogin }) {
                     attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
                     url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                 />
-                <LocationMarker setData={setData} data={data} />
+
                 <GeoJSON
                     style={style}
                     data={dataJson.features}
